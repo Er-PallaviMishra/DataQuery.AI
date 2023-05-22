@@ -17,9 +17,11 @@
   }
   
   .inp-container input{
-    display: inline-block;
+    // display: inline-block;
     width: 75%;
     height: $element-height;
+    // margin-left: auto;
+    display: inline;
   }
   .inp-container button{
     width: 10%;
@@ -30,6 +32,7 @@
   
   .dropdown{
     width: 15%;
+    display: inline-block;
   }
   .select-btn{
     height: $element-height;
