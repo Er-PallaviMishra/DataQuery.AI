@@ -1,8 +1,11 @@
 const express = require('express');
-const productCategories= require('./Routes/productCategories');
+const productCategories= require('./Routes/products');
 const app = express();
+const cors= require('cors');
 
-app.use("/productCategories", productCategories);
+app.use(cors());
+
+app.use("/product", productCategories);
 const PORT = 5000;
 
 const server = app.listen(PORT, () => {

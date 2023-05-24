@@ -1,5 +1,5 @@
 const express = require('express');
-const productCategories = express.Router();
+const products = express.Router();
 const mysql = require('mysql');
 
 const pool = mysql.createPool({
@@ -11,7 +11,7 @@ const pool = mysql.createPool({
     multipleStatements: true
 })
 
-productCategories.get("/", (req, res) => {
+products.get("/getCategories", (req, res) => {
     let categoryData;
 
     pool.query("select * from categories",(error,categories)=>{
@@ -25,4 +25,21 @@ productCategories.get("/", (req, res) => {
     })
 })
 
-module.exports= productCategories;
+
+products.get("/getProducts", (req, res) => {
+    let productdata;
+
+    pool.query("select * from products",(error,products)=>{
+        if(error){
+            productdata=error;
+            res.status(500).send(productdata);
+        }else{
+            productdata=products,
+            res.status(200).send(productdata);
+        }
+    })
+})
+
+
+
+module.exports= products;
