@@ -1,11 +1,28 @@
 const express = require('express');
-const productCategories= require('./Routes/products');
 const app = express();
-const cors= require('cors');
+const cors = require('cors');
 
-app.use(cors());
+// const product= require('./Routes/products');
+const product = require('./Routes/dbConnWithMongoDB');
+const bodyParser = require('body-parser');
 
-app.use("/product", productCategories);
+
+const corsOpts = {
+    origin: '*',
+  
+    methods: [
+      'GET',
+      'POST',
+      'DELETE'
+    ],
+  
+    allowedHeaders: [
+      'Content-Type',
+    ],
+  };
+  app.use(cors(corsOpts));
+app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
+app.use("/product", product);
 const PORT = 5000;
 
 const server = app.listen(PORT, () => {
