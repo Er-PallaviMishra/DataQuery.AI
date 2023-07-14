@@ -37,6 +37,9 @@ const SideNav = ()=>{
         dispatch(filterByPrice(payload));
     }
 
+
+    // console.log("here in accordion",accordionData)
+
     return(
         <div className='side-nav'>
             <div className='section-title'>
@@ -46,7 +49,7 @@ const SideNav = ()=>{
             <div className='accordion my-3'>
                 {
                     accordionData.map((accordionCategory, key)=>{
-                        if(accordionCategory.parentcategoryid === null){
+                        if(accordionCategory.parentcategoryid === 0){
                             return(
                                 <div className='accordion-item individual-category'>
                                     <div className='accordion-header'>
@@ -60,7 +63,7 @@ const SideNav = ()=>{
                                         <div className='accordion-body'>
                                             <ul>
                                                 {
-                                                    accordionData.map((subCategory)=>{
+                                                    accordionData?.map((subCategory)=>{
                                                         if(accordionCategory.id === subCategory.parentcategoryid){
                                                             return (
                                                                 <li className='sub-items'> 

@@ -13,10 +13,12 @@ const Products = () => {
         dispatch(getProducts());
     }, [])
 
-    const addToCart = (itemData)=>{
-        const payload = {...itemData,quantity:1};
+    const addToCart = (itemData) => {
+        const payload = { ...itemData, quantity: 1 };
         dispatch(addCartItem(payload));
     }
+
+    // console.log("here", productData);
 
     return (
         <div className='products-container'>
@@ -24,9 +26,9 @@ const Products = () => {
                 productData.map((product, key) => {
                     return (
                         <div className='mx-5 p-3 product-card'>
-                            <Link 
-                            state={product} 
-                            to={`/productdetails`}
+                            <Link
+                                state={product}
+                                to={`/productdetails`}
                             >
                                 <div className='product-image-container'>
                                     <img src={require('../../assets/images/shop/' + product.product_img)} />

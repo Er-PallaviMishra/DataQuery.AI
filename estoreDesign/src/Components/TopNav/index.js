@@ -13,7 +13,7 @@ const TopNav = () => {
     const successHandler = (res) => {
         setUserDetails(res.profileObj);
     }
-    console.log("data", userDetails);
+    // console.log("data", userDetails);
     return (
         <div>
             <div className='header bg-dark'>
@@ -35,7 +35,7 @@ const TopNav = () => {
                     <div className='login-container p-0'>
                         <i className='fa fa-user-circle user-icon' />
                         <h5>
-                            {console.log("here",userDetails)}
+                            {/* {console.log("here",userDetails)} */}
                             { userDetails === undefined?
                             <GoogleLogin clientId='240900363756-dnbf3ajp2h862m4duqlc072000il5qiu.apps.googleusercontent.com'
                             buttonText='Login'

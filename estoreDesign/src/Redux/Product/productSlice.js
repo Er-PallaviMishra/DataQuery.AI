@@ -12,21 +12,21 @@ const productSlice = createSlice({
     name:"products",
     initialState,
     reducers:{
-        filterProducts : (state,action)=>{
-            const filteredData = action.payload.products.filter((elem)=>{
-                return elem.category_id===action.payload.selectedCategory.id;
-            })
+        // filterProducts : (state,action)=>{
+        //     const filteredData = action.payload.products.filter((elem)=>{
+        //         return elem.category_id===action.payload.selectedCategory.id;
+        //     })
 
-            state.products = filteredData;
-        },
-        filterByPrice : (state,action)=>{
-            const filteredData = action.payload.products.filter((elem)=>{
-                return elem.price>=action.payload.minPriceLimit &&
-                    elem.price<=action.payload.maxPriceLimit;
-            })
+        //     state.products = filteredData;
+        // },
+        // filterByPrice : (state,action)=>{
+        //     const filteredData = action.payload.products.filter((elem)=>{
+        //         return elem.price>=action.payload.minPriceLimit &&
+        //             elem.price<=action.payload.maxPriceLimit;
+        //     })
 
-            state.products = filteredData;
-        }
+        //     state.products = filteredData;
+        // }
     },
     extraReducers : {
         [getProducts.pending] : (state,action)=>{

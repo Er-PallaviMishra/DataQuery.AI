@@ -8,7 +8,7 @@ const initialState = {
 };
 
 const categorySlice = createSlice({
-    name: "Category",
+    name: "categories",
     initialState,
     reducers:{},
     extraReducers:{
