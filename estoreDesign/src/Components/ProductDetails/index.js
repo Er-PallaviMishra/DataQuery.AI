@@ -4,8 +4,6 @@ import './_product-details.scss';
 const ProductDetails = ()=>{
     const location = useLocation();
 
-    console.log(location);
-
     return(
         <div>
             <div className="row conatiner my-5 product-details-container">
